@@ -1,10 +1,19 @@
 a=int(input())
-dva,dry=0,0
+prost=0
+neprost=0
+ch=0
+nada=1
 while a !=0:
-    if 9<a<100 and a>0 and a%5==0:
-        dva+=1
+    for i in range(a):
+        if a%nada == 0:
+            ch+=1
+        nada+=1
+    if ch==2:
+        prost+=1
     else:
-        dry+=1
+        neprost+=1
+    ch=0
+    nada=1
     a=int(input())
-print('Двухзначные, оканчиваются на 5: ', dva)
-print('Других: ', dry)
+print('Простых: ', prost)
+print('Других: ', neprost)
